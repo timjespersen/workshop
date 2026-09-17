@@ -1,0 +1,68 @@
+CulturaMinds Copilot Agent Builder — Knowledge website URLs (Option B)
+========================================================================
+
+Public base: https://culturaminds.com/workshop/
+Generated: 2026-09-17
+
+CRITICAL — Copilot Agent Builder path limit:
+  Public website knowledge URLs only support paths up to TWO levels deep
+  (domain + /workshop/ + filename.html). Deeper nested paths are invalid.
+  All knowledge HTML therefore lives flat next to index.html.
+
+Use when Copilot Knowledge will not accept file uploads.
+Prefer zip upload (Option A) first; fall back to these website URLs.
+
+For each role, paste the COMBINED URL into Knowledge,
+or paste any individual .html file URL.
+
+--- Realtor (Listing Q&A) ---
+  Realtor (combined)
+    https://timjespersen.github.io/workshop/realtor.html
+  MLS-summary.docx
+    https://timjespersen.github.io/workshop/realtor-MLS-summary.html
+  disclosure-notes.docx
+    https://timjespersen.github.io/workshop/realtor-disclosure-notes.html
+  hoa-fees.docx
+    https://timjespersen.github.io/workshop/realtor-hoa-fees.html
+
+--- Coffee shop (Menu & Hours) ---
+  Coffee shop (combined)
+    https://timjespersen.github.io/workshop/coffee-shop.html
+  Menu_2026-09.docx
+    https://timjespersen.github.io/workshop/coffee-shop-Menu_2026-09.html
+  Hours.docx
+    https://timjespersen.github.io/workshop/coffee-shop-Hours.html
+  allergen-notes.docx
+    https://timjespersen.github.io/workshop/coffee-shop-allergen-notes.html
+
+--- Bookkeeper (Client Books Helper) ---
+  Bookkeeper (combined)
+    https://timjespersen.github.io/workshop/bookkeeper.html
+  August-PnL.docx
+    https://timjespersen.github.io/workshop/bookkeeper-August-PnL.html
+  ClientX-engagement-letter.docx
+    https://timjespersen.github.io/workshop/bookkeeper-ClientX-engagement-letter.html
+  ClientX-invoices.xlsx
+    https://timjespersen.github.io/workshop/bookkeeper-ClientX-invoices.html
+
+--- Complaints (Complaints Helper) ---
+  Complaints (combined)
+    https://timjespersen.github.io/workshop/complaints.html
+  open-complaints-log.docx
+    https://timjespersen.github.io/workshop/complaints-open-complaints-log.html
+  response-playbook.docx
+    https://timjespersen.github.io/workshop/complaints-response-playbook.html
+  return-refund-policy.docx
+    https://timjespersen.github.io/workshop/complaints-return-refund-policy.html
+  sample-inbox-notes.docx
+    https://timjespersen.github.io/workshop/complaints-sample-inbox-notes.html
+
+Facilitator tip:
+  Deploy these flat *.html files under /workshop/ on culturaminds.com
+  (same host as the download landing at /workshop/index.html).
+  Do NOT nest under /workshop/knowledge/<role>/ — that exceeds the
+  Copilot 2-level path limit.
+
+Regenerate:
+  /workspace/copilot-workshop/.venv/bin/python \
+    web-workshop/build_knowledge_html.py

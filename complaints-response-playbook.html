@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>response-playbook — Complaints | CulturaMinds Workshop Knowledge</title>
+  <meta name="description" content="Complaints knowledge: response-playbook.docx for Copilot Agent Builder" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --purple: #5B2C6F;
+  --deep: #3D1A4A;
+  --coral: #F57C00;
+  --magenta: #C2185B;
+  --lavender: #F3EEF8;
+  --lavender-deep: #E8DFEF;
+  --green: #1B7A3D;
+  --ink: #1A1A1A;
+  --muted: #5A5A5A;
+  --card-edge: #E5DDEA;
+  --white: #FFFFFF;
+  --shadow: 0 8px 28px rgba(61, 26, 74, 0.10);
+  --radius: 16px;
+  --rail: 8px;
+  --accent: #C2185B;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--lavender) 0%, #FAF8FC 45%, #FFFFFF 100%);
+  font-size: 16.5px;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+.rail {
+  position: fixed; left: 0; top: 0; bottom: 0; width: var(--rail);
+  background: linear-gradient(180deg, var(--purple) 0%, var(--deep) 60%, var(--magenta) 100%);
+  z-index: 50;
+}
+.wrap { max-width: 880px; margin: 0 auto; padding: 28px 22px 56px calc(22px + var(--rail)); }
+header.page {
+  margin-bottom: 22px;
+}
+.role-chip {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--accent); background: var(--white);
+  border: 1px solid var(--card-edge); padding: 5px 11px; border-radius: 999px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-family: Montserrat, Inter, sans-serif;
+  font-weight: 800; font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  color: var(--deep); line-height: 1.25; margin-bottom: 8px;
+}
+.agent { color: var(--purple); font-weight: 600; font-size: 1.02rem; margin-bottom: 14px; }
+.intro {
+  background: var(--white); border-left: 4px solid var(--coral);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow); padding: 14px 16px; margin-bottom: 18px;
+  font-size: 0.98rem; color: var(--ink);
+}
+.url-chip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  background: var(--deep); color: #F3EEF8;
+  padding: 10px 14px; border-radius: 10px; margin-bottom: 20px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem; word-break: break-all;
+}
+.url-chip .label {
+  font-family: Montserrat, Inter, sans-serif; font-weight: 700;
+  font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--coral); flex-shrink: 0;
+}
+.toc {
+  background: var(--white); border: 1px solid var(--card-edge);
+  border-radius: var(--radius); padding: 16px 18px; margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+.toc h2 {
+  font-family: Montserrat, sans-serif; font-size: 0.95rem; color: var(--deep);
+  margin-bottom: 10px;
+}
+.toc ul { list-style: none; }
+.toc li { margin-bottom: 6px; }
+.toc a {
+  color: var(--purple); font-weight: 600; text-decoration: none; font-size: 0.92rem;
+}
+.toc a:hover { text-decoration: underline; color: var(--deep); }
+.toc .url {
+  display: block; font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.72rem; color: var(--muted); margin-top: 2px; word-break: break-all;
+  font-weight: 400;
+}
+.card {
+  background: var(--white); border: 1px solid var(--card-edge);
+  border-radius: var(--radius); padding: 22px 22px 26px;
+  box-shadow: var(--shadow); margin-bottom: 28px;
+}
+.card > h2.doc-title {
+  font-family: Montserrat, sans-serif; font-size: 1.2rem; font-weight: 700;
+  color: var(--deep); border-bottom: 2px solid var(--lavender-deep);
+  padding-bottom: 10px; margin-bottom: 16px;
+}
+.content h1 {
+  font-size: 1.25rem; margin: 0 0 12px; color: var(--deep);
+}
+.content h2 {
+  font-family: Montserrat, sans-serif; font-size: 1.05rem; font-weight: 700;
+  color: var(--purple); margin: 18px 0 8px;
+}
+.content h3 {
+  font-family: Montserrat, sans-serif; font-size: 0.98rem; font-weight: 700;
+  color: var(--deep); margin: 14px 0 6px;
+}
+.content p { margin: 0 0 10px; }
+.content ul, .content ol { margin: 0 0 12px 1.25rem; }
+.content li { margin-bottom: 4px; }
+.content table {
+  width: 100%; border-collapse: collapse; margin: 10px 0 16px;
+  font-size: 0.9rem; overflow-x: auto; display: block;
+}
+.content thead, .content tbody { display: table; width: 100%; }
+.content th, .content td {
+  border: 1px solid var(--card-edge); padding: 8px 10px; text-align: left;
+  vertical-align: top;
+}
+.content th {
+  background: var(--lavender); color: var(--deep);
+  font-family: Montserrat, sans-serif; font-size: 0.82rem; font-weight: 700;
+}
+.content tr:nth-child(even) td { background: #FAF8FC; }
+.content .strong { font-weight: 600; }
+.back {
+  display: inline-block; margin-bottom: 14px; color: var(--purple);
+  font-weight: 600; text-decoration: none; font-size: 0.9rem;
+}
+.back:hover { text-decoration: underline; }
+footer.page {
+  margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--card-edge);
+  font-size: 0.82rem; color: var(--muted);
+}
+footer.page strong { color: var(--deep); }
+@media (max-width: 600px) {
+  .wrap { padding: 20px 14px 40px calc(14px + var(--rail)); }
+  .card { padding: 16px; }
+}
+</style>
+</head>
+<body>
+  <div class="rail" aria-hidden="true"></div>
+  <main class="wrap">
+    <a class="back" href="complaints.html">← All Complaints knowledge</a>
+    <header class="page">
+      <span class="role-chip">Complaints · Complaints Helper</span>
+      <h1>response-playbook</h1>
+      <p class="agent">Paste this page URL into Copilot Knowledge (website)</p>
+    </header>
+    <div class="url-chip"><span class="label">Copy URL</span> https://timjespersen.github.io/workshop/complaints-response-playbook.html</div>
+    <article class="card">
+      <div class="content">
+<h1>Concho Outfitters — Complaint Response Playbook</h1>
+<p><strong>For:</strong> Front-desk lead and owner (human sends every message)</p>
+<p><strong>Store:</strong> 215 S Chadbourne St, San Angelo, TX 76903 · (325) 555-0174</p>
+<p><strong>Companion files:</strong> return-refund-policy.docx, open-complaints-log.docx, sample-inbox-notes.docx</p>
+<p>This playbook guides <strong>tone and next steps</strong>. It is not legal advice. The agent <strong>drafts only</strong> — a human reviews and sends. Never mark a case <strong>Resolved</strong> or claim the email was sent.</p>
+<h2>Tone rules</h2>
+<ol><li><strong>Warm and local</strong> — thank them for telling us; sound like San Angelo neighbors, not a call-center script.</li><li><strong>Own the experience, not imaginary guilt</strong> — “I’m sorry this happened” / “Thanks for your patience” is good. Do <strong>not</strong> invent admissions of illegal conduct, discrimination findings, or injury liability.</li><li><strong>Plain English</strong> — short paragraphs; one clear next step.</li><li><strong>Name the facts</strong> — case ID, order/SKU, dates from the log when known.</li><li><strong>Never invent</strong> — no fake case IDs, refund amounts, ETAs, or policy exceptions.</li></ol>
+<h2>Apology pattern (3 beats)</h2>
+<ol><li><strong>Acknowledge</strong> — restate the issue in one sentence.</li><li><strong>Action</strong> — what we can do under policy (exchange / credit / refund / wait for stock / escalate).</li><li><strong>Close</strong> — how we’ll follow up and invite them to reply or call (325) 555-0174.</li></ol>
+<p>Example skeleton (customize with real case facts):</p>
+<p><em>Hi [Name] — thanks for reaching out about [issue]. I’m sorry [specific inconvenience]. Here’s what we can do: [offer from policy/log]. Next step: [photo / bring item / wait for ETA / manager call]. Reply to this email or call us at (325) 555-0174. — [Staff name], Concho Outfitters</em></p>
+<h3>Worked example — draft for CO-1042 (beginner-safe)</h3>
+<p>Facts from the log: Priya N. · order <strong>#CO-88421</strong> · Alps Lynx 2 tent damaged in shipping · <strong>Open</strong> · offer <strong>replacement or full refund</strong> · waive return shipping.</p>
+<p><em>Hi Priya — thanks for writing about order #CO-88421 and for the photos of the crushed box and damaged Alps Lynx 2. I’m sorry your tent arrived that way. Here’s what we can do: we’ll either ship a replacement (same SKU, in stock) </em><em><strong>or</strong></em><em> issue a full refund of $189.99 plus the $12 shipping — your choice. We’ll waive return shipping either way. Next step: reply with “replace” or “refund,” and Jordan will process it after we confirm. Call (325) 555-0174 if easier. — Jordan Blake, Concho Outfitters  </em><em><strong>[Human confirm before send — draft only]</strong></em></p>
+<h2>When to offer what</h2>
+<table><thead><tr><th>Situation</th><th>Prefer</th><th>Notes</th></tr></thead><tbody><tr><td>Unused return + receipt ≤30 days</td><td>Refund or exchange</td><td>Customer choice</td></tr><tr><td>No receipt ≤14 days</td><td>Store credit only</td><td>Lookup purchase first</td></tr><tr><td>Shipping damage ≤7 days + photos</td><td>Replacement or full refund</td><td>Waive return shipping</td></tr><tr><td>Defect within 90-day store check</td><td>Exchange / refund / credit</td><td>See warranty path too</td></tr><tr><td>Wrong size, tags on</td><td>Exchange; hold special order if Waiting</td><td>Don’t pressure upsell</td></tr><tr><td>Service miss (late pickup, rude claim)</td><td>Apology + goodwill credit if owner approved</td><td>Amount only if log/manager says so</td></tr><tr><td>Price match (same day, verified)</td><td>Difference refunded to original payment</td><td>Manager verifies competitor</td></tr><tr><td>Final sale / outside window</td><td>Explain policy; optional manager goodwill</td><td>Do not invent exceptions</td></tr></tbody></table>
+<h2>Escalation to owner / manager (Maya Ortega)</h2>
+<p>Escalate when:</p>
+<ul><li>Customer mentions <strong>attorney</strong>, lawsuit, “you’ll hear from my lawyer,” or regulatory complaint</li><li>Claim of <strong>injury</strong>, illness, or product safety harm</li><li>Staff conduct / discrimination allegations</li><li>Requested refund or credit <strong>above $100</strong> goodwill (not already in policy/log)</li><li>Media or social-post threats</li><li>Any case already marked owner-owned in the log (e.g. <strong>CO-1051</strong>)</li></ul>
+<p><strong>Escalation script for the agent:</strong> Draft a brief internal note + a customer-facing holding reply: “I’m looping in our owner, Maya, who will follow up by [same/next business day].”</p>
+<h2>What NEVER to say</h2>
+<ul><li>Legal threats or counter-threats; “we admit liability”; “this was our fault under Texas law…”</li><li>Medical claims (“this caused your rash,” “safe for every allergy,” treatment advice)</li><li>Guaranteed outcomes beyond written policy (“we always refund no matter what,” “court will…”)</li><li>Invented policy, case IDs, ETAs, or dollar amounts not in knowledge</li><li>Blame the customer (“you should have…”) or blame a named coworker in writing</li><li>Promises that fishing licenses, hunting tags, or permits are sold in-store (we direct to TPWD)</li></ul>
+<h2>SLA — response timing</h2>
+<table><thead><tr><th>When complaint arrives</th><th>Goal</th></tr></thead><tbody><tr><td>Before 4:00 PM business day</td><td>Same-day acknowledgment (draft for human)</td></tr><tr><td>After 4:00 PM or Sunday</td><td>Next business day</td></tr><tr><td>Escalations to Maya</td><td>Same or next business day owner touch</td></tr></tbody></table>
+<p>Business hours for SLA: Mon–Sat 9 AM–7 PM, Sun 11 AM–5 PM (see policy).</p>
+<h2>When to ask for a photo or receipt</h2>
+<p><strong>Ask for photos when:</strong></p>
+<ul><li>Shipping or packaging damage</li><li>Defect not obvious from description</li><li>Price-match competitor listing (screenshot with date/price)</li></ul>
+<p><strong>Ask for receipt / order # when:</strong></p>
+<ul><li>Return or refund requested</li><li>Warranty / 90-day store check</li><li>No-receipt lookup (also ask approx date, payment method, phone)</li></ul>
+<p>Do <strong>not</strong> delay a simple policy answer (“What’s our return window?”) just to demand documents.</p>
+<h2>Drafting checklist (agent + human)</h2>
+<p>☐ Facts match open-complaints-log.docx / sample-inbox-notes.docx (or user-provided new facts labeled as unverified)</p>
+<p>☐ Offer matches return-refund-policy.docx</p>
+<p>☐ Tone matches apology pattern</p>
+<p>☐ No legal/medical invention</p>
+<p>☐ Human must <strong>confirm before sending</strong> email or posting a public reply</p>
+<p>☐ Agent did <strong>not</strong> mark the case Resolved or claim the message was sent</p>
+<p>☐ If out of bounds → escalate or say you don’t have that in the knowledge pack</p>
+<p><em>Fictional playbook for San Angelo Copilot Agent Builder training. Not legal, medical, or HR advice.</em></p>
+      </div>
+    </article>
+
+    <footer class="page">
+      <strong>Knowledge for Copilot Agent Builder</strong> · culturaminds.com/workshop<br />
+      CulturaMinds · San Angelo workshop · CVTA + ASU SBDC · Fictional training data<br />
+      URLs kept to two path levels (Copilot Agent Builder requirement).
+    </footer>
+  </main>
+</body>
+</html>

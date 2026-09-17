@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>return-refund-policy — Complaints | CulturaMinds Workshop Knowledge</title>
+  <meta name="description" content="Complaints knowledge: return-refund-policy.docx for Copilot Agent Builder" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --purple: #5B2C6F;
+  --deep: #3D1A4A;
+  --coral: #F57C00;
+  --magenta: #C2185B;
+  --lavender: #F3EEF8;
+  --lavender-deep: #E8DFEF;
+  --green: #1B7A3D;
+  --ink: #1A1A1A;
+  --muted: #5A5A5A;
+  --card-edge: #E5DDEA;
+  --white: #FFFFFF;
+  --shadow: 0 8px 28px rgba(61, 26, 74, 0.10);
+  --radius: 16px;
+  --rail: 8px;
+  --accent: #C2185B;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--lavender) 0%, #FAF8FC 45%, #FFFFFF 100%);
+  font-size: 16.5px;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+.rail {
+  position: fixed; left: 0; top: 0; bottom: 0; width: var(--rail);
+  background: linear-gradient(180deg, var(--purple) 0%, var(--deep) 60%, var(--magenta) 100%);
+  z-index: 50;
+}
+.wrap { max-width: 880px; margin: 0 auto; padding: 28px 22px 56px calc(22px + var(--rail)); }
+header.page {
+  margin-bottom: 22px;
+}
+.role-chip {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--accent); background: var(--white);
+  border: 1px solid var(--card-edge); padding: 5px 11px; border-radius: 999px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-family: Montserrat, Inter, sans-serif;
+  font-weight: 800; font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  color: var(--deep); line-height: 1.25; margin-bottom: 8px;
+}
+.agent { color: var(--purple); font-weight: 600; font-size: 1.02rem; margin-bottom: 14px; }
+.intro {
+  background: var(--white); border-left: 4px solid var(--coral);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow); padding: 14px 16px; margin-bottom: 18px;
+  font-size: 0.98rem; color: var(--ink);
+}
+.url-chip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  background: var(--deep); color: #F3EEF8;
+  padding: 10px 14px; border-radius: 10px; margin-bottom: 20px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem; word-break: break-all;
+}
+.url-chip .label {
+  font-family: Montserrat, Inter, sans-serif; font-weight: 700;
+  font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--coral); flex-shrink: 0;
+}
+.toc {
+  background: var(--white); border: 1px solid var(--card-edge);
+  border-radius: var(--radius); padding: 16px 18px; margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+.toc h2 {
+  font-family: Montserrat, sans-serif; font-size: 0.95rem; color: var(--deep);
+  margin-bottom: 10px;
+}
+.toc ul { list-style: none; }
+.toc li { margin-bottom: 6px; }
+.toc a {
+  color: var(--purple); font-weight: 600; text-decoration: none; font-size: 0.92rem;
+}
+.toc a:hover { text-decoration: underline; color: var(--deep); }
+.toc .url {
+  display: block; font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.72rem; color: var(--muted); margin-top: 2px; word-break: break-all;
+  font-weight: 400;
+}
+.card {
+  background: var(--white); border: 1px solid var(--card-edge);
+  border-radius: var(--radius); padding: 22px 22px 26px;
+  box-shadow: var(--shadow); margin-bottom: 28px;
+}
+.card > h2.doc-title {
+  font-family: Montserrat, sans-serif; font-size: 1.2rem; font-weight: 700;
+  color: var(--deep); border-bottom: 2px solid var(--lavender-deep);
+  padding-bottom: 10px; margin-bottom: 16px;
+}
+.content h1 {
+  font-size: 1.25rem; margin: 0 0 12px; color: var(--deep);
+}
+.content h2 {
+  font-family: Montserrat, sans-serif; font-size: 1.05rem; font-weight: 700;
+  color: var(--purple); margin: 18px 0 8px;
+}
+.content h3 {
+  font-family: Montserrat, sans-serif; font-size: 0.98rem; font-weight: 700;
+  color: var(--deep); margin: 14px 0 6px;
+}
+.content p { margin: 0 0 10px; }
+.content ul, .content ol { margin: 0 0 12px 1.25rem; }
+.content li { margin-bottom: 4px; }
+.content table {
+  width: 100%; border-collapse: collapse; margin: 10px 0 16px;
+  font-size: 0.9rem; overflow-x: auto; display: block;
+}
+.content thead, .content tbody { display: table; width: 100%; }
+.content th, .content td {
+  border: 1px solid var(--card-edge); padding: 8px 10px; text-align: left;
+  vertical-align: top;
+}
+.content th {
+  background: var(--lavender); color: var(--deep);
+  font-family: Montserrat, sans-serif; font-size: 0.82rem; font-weight: 700;
+}
+.content tr:nth-child(even) td { background: #FAF8FC; }
+.content .strong { font-weight: 600; }
+.back {
+  display: inline-block; margin-bottom: 14px; color: var(--purple);
+  font-weight: 600; text-decoration: none; font-size: 0.9rem;
+}
+.back:hover { text-decoration: underline; }
+footer.page {
+  margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--card-edge);
+  font-size: 0.82rem; color: var(--muted);
+}
+footer.page strong { color: var(--deep); }
+@media (max-width: 600px) {
+  .wrap { padding: 20px 14px 40px calc(14px + var(--rail)); }
+  .card { padding: 16px; }
+}
+</style>
+</head>
+<body>
+  <div class="rail" aria-hidden="true"></div>
+  <main class="wrap">
+    <a class="back" href="complaints.html">← All Complaints knowledge</a>
+    <header class="page">
+      <span class="role-chip">Complaints · Complaints Helper</span>
+      <h1>return-refund-policy</h1>
+      <p class="agent">Paste this page URL into Copilot Knowledge (website)</p>
+    </header>
+    <div class="url-chip"><span class="label">Copy URL</span> https://timjespersen.github.io/workshop/complaints-return-refund-policy.html</div>
+    <article class="card">
+      <div class="content">
+<h1>Concho Outfitters — Return &amp; Refund Policy</h1>
+<p><strong>Business:</strong> Concho Outfitters</p>
+<p><strong>Address:</strong> 215 S Chadbourne St, San Angelo, TX 76903 (downtown, near the Concho River)</p>
+<p><strong>Phone (fictional):</strong> (325) 555-0174</p>
+<p><strong>Email:</strong> hello@conchooutfitters.example</p>
+<p><strong>Effective:</strong> September 1, 2026</p>
+<p><strong>Last updated:</strong> September 10, 2026</p>
+<p><strong>Store hours:</strong> Mon–Sat 9:00 AM–7:00 PM · Sun 11:00 AM–5:00 PM</p>
+<p>Warm, local outdoor gear for West Texas — camping, hiking, fishing, and everyday workwear.</p>
+<h2>Quick reference</h2>
+<table><thead><tr><th>Situation</th><th>Window</th><th>What we offer</th><th>Receipt needed?</th></tr></thead><tbody><tr><td>Standard return (unused, tags on)</td><td>30 days from purchase</td><td>Refund to original payment or exchange</td><td>Yes</td></tr><tr><td>Return without receipt</td><td>14 days from purchase (card/order lookup OK)</td><td>Store credit only</td><td>No — look up by card/name/order #</td></tr><tr><td>Defective / manufacturer warranty</td><td>Per manufacturer + our 90-day store check</td><td>Repair, replacement, or refund per playbook</td><td>Preferred; order # helps</td></tr><tr><td>Shipping damage (online / ship-to-store)</td><td>Report within 7 days of delivery</td><td>Replacement or refund; photo required</td><td>Order confirmation</td></tr><tr><td>Final sale</td><td>N/A</td><td>No returns</td><td>—</td></tr><tr><td>Price-match request</td><td>Same day of purchase (in-store)</td><td>Match local competitor on identical in-stock item</td><td>Competitor ad / screenshot</td></tr></tbody></table>
+<p><strong>Windows at a glance:</strong> <strong>30</strong> (standard) · <strong>14</strong> (no receipt → credit) · <strong>90</strong> (store defect check) · <strong>7</strong> (shipping damage) · <strong>same-day</strong> (price match).</p>
+<h2>Store credit vs refund vs exchange (one glance)</h2>
+<table><thead><tr><th>Offer</th><th>When to use</th></tr></thead><tbody><tr><td>Refund to original payment</td><td>Valid return with receipt inside 30 days; shipping damage; approved defect within policy</td></tr><tr><td>Exchange</td><td>Wrong size/color; customer still wants the product; stock available</td></tr><tr><td>Store credit</td><td>No receipt (within 14 days); customer prefers credit; goodwill gesture approved by manager</td></tr><tr><td>Partial refund / credit</td><td>Only if playbook or manager notes say so for a specific case — do not invent amounts</td></tr></tbody></table>
+<h2>Standard returns (with receipt)</h2>
+<ul><li>Item must be unused, clean, and in original packaging with tags attached when applicable.</li><li>Within <strong>30 days</strong> of the purchase date on the receipt or order confirmation.</li><li>Refund goes to the <strong>original payment method</strong> (card, cash, gift card).</li><li>Exchanges for size/color are welcome anytime within the 30-day window if stock allows.</li><li>Online orders returned in-store: bring the packing slip or order email.</li></ul>
+<h2>Returns without a receipt</h2>
+<ul><li>Within <strong>14 days</strong>, we can look up the purchase by card, phone, name, or order number.</li><li>Outcome is <strong>store credit only</strong> (Concho Outfitters gift card), <strong>not</strong> a card refund.</li><li>After 14 days without proof of purchase: we cannot process a return; invite the guest to speak with a manager for goodwill options case-by-case.</li></ul>
+<h2>Defective items &amp; warranty</h2>
+<ul><li><strong>Our store check (90 days):</strong> If an item fails under normal use within 90 days of purchase, bring it in. We offer exchange for the same item, store credit, or refund to original payment when stock/condition warrant.</li><li><strong>Manufacturer warranty:</strong> Tents, electronics, and branded footwear often carry separate warranties. We help start a warranty claim and can hold the item; we do not invent warranty coverage beyond what the brand states.</li><li>Staff stick to product features and written warranty language — not medical outcomes (e.g., no “this boot will fix your plantar fasciitis”).</li></ul>
+<h2>Shipping damage</h2>
+<ol><li>Customer should report within <strong>7 days</strong> of delivery.</li><li>Ask for <strong>photos</strong> of the outer box, inner packaging, and damaged item.</li><li>Offer <strong>replacement</strong> if in stock, or <strong>full refund</strong> including original shipping if we charged it.</li><li>Do <strong>not</strong> ask the customer to pay return shipping for damage we caused in transit.</li></ol>
+<h2>Final-sale categories (no returns)</h2>
+<ul><li>Clearance marked <strong>Final Sale</strong></li><li>Gift cards</li><li>Personal care / first-aid consumables once opened</li><li>Custom-embroidered or special-order gear (unless defective on arrival)</li><li>Downloadable maps / digital gift certificates</li></ul>
+<h2>Price match</h2>
+<ul><li>Same-day, in-store only.</li><li>Identical new item, same brand/model, currently in stock at a <strong>local San Angelo</strong> competitor (or major online retailer with published price — manager discretion).</li><li>One item per customer per day; does not apply to Final Sale or clearance.</li></ul>
+<h2>How to contact us</h2>
+<ul><li><strong>In store:</strong> 215 S Chadbourne St, San Angelo, TX 76903 — Mon–Sat 9 AM–7 PM, Sun 11 AM–5 PM</li><li><strong>Phone:</strong> (325) 555-0174</li><li><strong>Email:</strong> hello@conchooutfitters.example</li><li><strong>Response goal:</strong> Same business day for complaints logged before 4 PM; next business day if after.</li></ul>
+<p><em>Fictional Concho Outfitters policy for San Angelo Copilot Agent Builder training. Not a real store policy or legal document.</em></p>
+      </div>
+    </article>
+
+    <footer class="page">
+      <strong>Knowledge for Copilot Agent Builder</strong> · culturaminds.com/workshop<br />
+      CulturaMinds · San Angelo workshop · CVTA + ASU SBDC · Fictional training data<br />
+      URLs kept to two path levels (Copilot Agent Builder requirement).
+    </footer>
+  </main>
+</body>
+</html>

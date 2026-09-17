@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>open-complaints-log — Complaints | CulturaMinds Workshop Knowledge</title>
+  <meta name="description" content="Complaints knowledge: open-complaints-log.docx for Copilot Agent Builder" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --purple: #5B2C6F;
+  --deep: #3D1A4A;
+  --coral: #F57C00;
+  --magenta: #C2185B;
+  --lavender: #F3EEF8;
+  --lavender-deep: #E8DFEF;
+  --green: #1B7A3D;
+  --ink: #1A1A1A;
+  --muted: #5A5A5A;
+  --card-edge: #E5DDEA;
+  --white: #FFFFFF;
+  --shadow: 0 8px 28px rgba(61, 26, 74, 0.10);
+  --radius: 16px;
+  --rail: 8px;
+  --accent: #C2185B;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--lavender) 0%, #FAF8FC 45%, #FFFFFF 100%);
+  font-size: 16.5px;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+.rail {
+  position: fixed; left: 0; top: 0; bottom: 0; width: var(--rail);
+  background: linear-gradient(180deg, var(--purple) 0%, var(--deep) 60%, var(--magenta) 100%);
+  z-index: 50;
+}
+.wrap { max-width: 880px; margin: 0 auto; padding: 28px 22px 56px calc(22px + var(--rail)); }
+header.page {
+  margin-bottom: 22px;
+}
+.role-chip {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--accent); background: var(--white);
+  border: 1px solid var(--card-edge); padding: 5px 11px; border-radius: 999px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-family: Montserrat, Inter, sans-serif;
+  font-weight: 800; font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  color: var(--deep); line-height: 1.25; margin-bottom: 8px;
+}
+.agent { color: var(--purple); font-weight: 600; font-size: 1.02rem; margin-bottom: 14px; }
+.intro {
+  background: var(--white); border-left: 4px solid var(--coral);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow); padding: 14px 16px; margin-bottom: 18px;
+  font-size: 0.98rem; color: var(--ink);
+}
+.url-chip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  background: var(--deep); color: #F3EEF8;
+  padding: 10px 14px; border-radius: 10px; margin-bottom: 20px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem; word-break: break-all;
+}
+.url-chip .label {
+  font-family: Montserrat, Inter, sans-serif; font-weight: 700;
+  font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--coral); flex-shrink: 0;
+}
+.toc {
+  background: var(--white); border: 1px solid var(--card-edge);
+  border-radius: var(--radius); padding: 16px 18px; margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+.toc h2 {
+  font-family: Montserrat, sans-serif; font-size: 0.95rem; color: var(--deep);
+  margin-bottom: 10px;
+}
+.toc ul { list-style: none; }
+.toc li { margin-bottom: 6px; }
+.toc a {
+  color: var(--purple); font-weight: 600; text-decoration: none; font-size: 0.92rem;
+}
+.toc a:hover { text-decoration: underline; color: var(--deep); }
+.toc .url {
+  display: block; font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.72rem; color: var(--muted); margin-top: 2px; word-break: break-all;
+  font-weight: 400;
+}
+.card {
+  background: var(--white); border: 1px solid var(--card-edge);
+  border-radius: var(--radius); padding: 22px 22px 26px;
+  box-shadow: var(--shadow); margin-bottom: 28px;
+}
+.card > h2.doc-title {
+  font-family: Montserrat, sans-serif; font-size: 1.2rem; font-weight: 700;
+  color: var(--deep); border-bottom: 2px solid var(--lavender-deep);
+  padding-bottom: 10px; margin-bottom: 16px;
+}
+.content h1 {
+  font-size: 1.25rem; margin: 0 0 12px; color: var(--deep);
+}
+.content h2 {
+  font-family: Montserrat, sans-serif; font-size: 1.05rem; font-weight: 700;
+  color: var(--purple); margin: 18px 0 8px;
+}
+.content h3 {
+  font-family: Montserrat, sans-serif; font-size: 0.98rem; font-weight: 700;
+  color: var(--deep); margin: 14px 0 6px;
+}
+.content p { margin: 0 0 10px; }
+.content ul, .content ol { margin: 0 0 12px 1.25rem; }
+.content li { margin-bottom: 4px; }
+.content table {
+  width: 100%; border-collapse: collapse; margin: 10px 0 16px;
+  font-size: 0.9rem; overflow-x: auto; display: block;
+}
+.content thead, .content tbody { display: table; width: 100%; }
+.content th, .content td {
+  border: 1px solid var(--card-edge); padding: 8px 10px; text-align: left;
+  vertical-align: top;
+}
+.content th {
+  background: var(--lavender); color: var(--deep);
+  font-family: Montserrat, sans-serif; font-size: 0.82rem; font-weight: 700;
+}
+.content tr:nth-child(even) td { background: #FAF8FC; }
+.content .strong { font-weight: 600; }
+.back {
+  display: inline-block; margin-bottom: 14px; color: var(--purple);
+  font-weight: 600; text-decoration: none; font-size: 0.9rem;
+}
+.back:hover { text-decoration: underline; }
+footer.page {
+  margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--card-edge);
+  font-size: 0.82rem; color: var(--muted);
+}
+footer.page strong { color: var(--deep); }
+@media (max-width: 600px) {
+  .wrap { padding: 20px 14px 40px calc(14px + var(--rail)); }
+  .card { padding: 16px; }
+}
+</style>
+</head>
+<body>
+  <div class="rail" aria-hidden="true"></div>
+  <main class="wrap">
+    <a class="back" href="complaints.html">← All Complaints knowledge</a>
+    <header class="page">
+      <span class="role-chip">Complaints · Complaints Helper</span>
+      <h1>open-complaints-log</h1>
+      <p class="agent">Paste this page URL into Copilot Knowledge (website)</p>
+    </header>
+    <div class="url-chip"><span class="label">Copy URL</span> https://timjespersen.github.io/workshop/complaints-open-complaints-log.html</div>
+    <article class="card">
+      <div class="content">
+<h1>Concho Outfitters — Open Complaints Log</h1>
+<p><strong>Store:</strong> 215 S Chadbourne St, San Angelo, TX 76903</p>
+<p><strong>Phone:</strong> (325) 555-0174</p>
+<p><strong>Log updated:</strong> September 15, 2026</p>
+<p><strong>Owner on duty this week:</strong> Maya Ortega</p>
+<p><strong>Front-desk lead:</strong> Jordan Blake</p>
+<p>Only the cases listed below are on file as of this update. Amounts, ETAs, and outcomes come from these entries (or the companion policy/playbook). Do <strong>not</strong> invent Case IDs, amounts, or outcomes not listed here.</p>
+<h2>Summary</h2>
+<table><thead><tr><th>Case ID</th><th>Date</th><th>Customer</th><th>Channel</th><th>Issue (short)</th><th>Status</th><th>Owner</th></tr></thead><tbody><tr><td>CO-1042</td><td>2026-09-08</td><td>Priya N.</td><td>Email</td><td>Damaged tent shipment</td><td>Open</td><td>Jordan Blake</td></tr><tr><td>CO-1045</td><td>2026-09-10</td><td>Marcus T.</td><td>In-store</td><td>Wrong size hiking boots</td><td>Waiting</td><td>Jordan Blake</td></tr><tr><td>CO-1048</td><td>2026-09-11</td><td>Elena R.</td><td>Phone</td><td>Late curbside pickup</td><td>Resolved</td><td>Maya Ortega</td></tr><tr><td>CO-1051</td><td>2026-09-12</td><td>Devon K.</td><td>Email</td><td>Rude interaction claim</td><td>Open</td><td>Maya Ortega</td></tr><tr><td>CO-1053</td><td>2026-09-13</td><td>Sam W.</td><td>In-store</td><td>Warranty defect — headlamp</td><td>Waiting</td><td>Jordan Blake</td></tr><tr><td>CO-1056</td><td>2026-09-14</td><td>Alicia M.</td><td>Email</td><td>Price-match request</td><td>Open</td><td>Jordan Blake</td></tr><tr><td>CO-1059</td><td>2026-09-15</td><td>Chris P.</td><td>Phone</td><td>Return without receipt</td><td>Open</td><td>Jordan Blake</td></tr></tbody></table>
+<p><strong>Status badges:</strong> <strong>Open</strong> = action still needed · <strong>Waiting</strong> = blocked on vendor/stock ETA · <strong>Resolved</strong> = closed unless customer reopens.</p>
+<h3>Demo anchors (unambiguous answers)</h3>
+<table><thead><tr><th>Case</th><th>Expect in one glance</th></tr></thead><tbody><tr><td>CO-1042</td><td>Damaged tent → replace OR full refund; waive return shipping</td></tr><tr><td>CO-1056</td><td>Same-day price match → $20.01 to original card if verified</td></tr><tr><td>CO-1059</td><td>14-day no-receipt → store credit only (no card refund)</td></tr><tr><td>CO-1045</td><td>Waiting · size 10.5 Wide ETA Sep 18</td></tr><tr><td>CO-1053</td><td>Waiting · replacement ETA Sep 20; refund option after Sep 22</td></tr></tbody></table>
+<h2>Case details</h2>
+<h3>CO-1042 — Damaged tent shipment</h3>
+<ul><li><strong>Date opened:</strong> September 8, 2026</li><li><strong>Customer:</strong> Priya N.</li><li><strong>Channel:</strong> Email → hello@conchooutfitters.example</li><li><strong>Order / SKU:</strong> Online order <strong>#CO-88421</strong> · SKU <strong>TENT-ALPS-2P</strong> · Alps Mountaineering Lynx 2 (2-person tent) · Paid <strong>$189.99</strong> + <strong>$12.00</strong> shipping</li><li><strong>Issue:</strong> Box arrived crushed; tent pole sleeve torn; rainfly zipper pull broken. Customer attached photos (on file). Reported within 7 days of delivery (delivered Sep 6).</li><li><strong>Status:</strong> <strong>Open</strong></li><li><strong>Owner:</strong> Jordan Blake</li><li><strong>Next step:</strong> Offer full refund <strong>or</strong> replacement tent (same SKU in stock as of Sep 15). <strong>Waive return shipping.</strong> Draft apology email for human to confirm before send.</li></ul>
+<h3>CO-1045 — Wrong size hiking boots</h3>
+<ul><li><strong>Date opened:</strong> September 10, 2026</li><li><strong>Customer:</strong> Marcus T.</li><li><strong>Channel:</strong> In-store</li><li><strong>Order / SKU:</strong> Receipt <strong>#R-55219</strong> (Sep 3) · SKU <strong>BOOT-MER-MOAB-10</strong> · Merrell Moab 3, men’s size <strong>10</strong> · Paid <strong>$140.00</strong></li><li><strong>Issue:</strong> Boots are too narrow; wants size <strong>10.5 Wide</strong> if available, else exchange for different model in same price range. Boots unused, tags on, within 30-day window.</li><li><strong>Status:</strong> <strong>Waiting</strong> — size 10.5 Wide on order from vendor; ETA <strong>September 18, 2026</strong>. Customer chose to wait rather than refund.</li><li><strong>Owner:</strong> Jordan Blake</li><li><strong>Next step:</strong> Text/call Marcus when 10.5 Wide arrives; hold pair for 5 days. If vendor slip, offer refund to original card or exchange in store.</li></ul>
+<h3>CO-1048 — Late curbside pickup (RESOLVED)</h3>
+<ul><li><strong>Date opened:</strong> September 11, 2026</li><li><strong>Customer:</strong> Elena R.</li><li><strong>Channel:</strong> Phone</li><li><strong>Order / SKU:</strong> Pickup order <strong>#PU-3310</strong> · Cooler bag + dual water bottles · Paid <strong>$64.50</strong></li><li><strong>Issue:</strong> Curbside ready text sent at 11:02 AM; customer arrived 11:20 AM; order not brought out until 11:48 AM. Customer missed lunch appointment.</li><li><strong>Status:</strong> <strong>Resolved</strong> (Sep 11)</li><li><strong>Owner:</strong> Maya Ortega</li><li><strong>Resolution notes:</strong> Manager apology by phone; <strong>$15 store credit</strong> issued (gift card <strong>GC-2291</strong>). Order handed over same day. No further action unless customer reopens.</li></ul>
+<h3>CO-1051 — Rude interaction claim</h3>
+<ul><li><strong>Date opened:</strong> September 12, 2026</li><li><strong>Customer:</strong> Devon K.</li><li><strong>Channel:</strong> Email</li><li><strong>Order / SKU:</strong> Browse only — no purchase that day (visited Sep 11 ~4:30 PM)</li><li><strong>Issue:</strong> Customer states a floor associate dismissed questions about fishing licenses and “talked over” them. Wants acknowledgment and assurance staff will be coached.</li><li><strong>Status:</strong> <strong>Open</strong></li><li><strong>Owner:</strong> Maya Ortega (owner escalation)</li><li><strong>Next step:</strong> Owner drafts apology; confirm we do <strong>not</strong> sell fishing licenses (TPWD) and staff should direct guests to tpwd.texas.gov / licensed vendors — politely. Offer to walk Devon through rod/reel questions on a scheduled visit. Stick to service recovery language. No refund owed (no purchase). Do <strong>not</strong> admit legal wrongdoing.</li></ul>
+<h3>CO-1053 — Warranty defect — headlamp</h3>
+<ul><li><strong>Date opened:</strong> September 13, 2026</li><li><strong>Customer:</strong> Sam W.</li><li><strong>Channel:</strong> In-store</li><li><strong>Order / SKU:</strong> Receipt <strong>#R-54887</strong> (July 20, 2026) · SKU <strong>LAMP-BD-STORM</strong> · Black Diamond Storm 500 · Paid <strong>$59.95</strong></li><li><strong>Issue:</strong> Headlamp worked ~6 weeks; now flickers and battery door latch cracked under normal use. Within our <strong>90-day store check</strong>. Manufacturer warranty also may apply.</li><li><strong>Status:</strong> <strong>Waiting</strong> — replacement unit requested from distributor; ETA <strong>September 20, 2026</strong>. Customer left unit with us (claim tag <strong>CT-441</strong>).</li><li><strong>Owner:</strong> Jordan Blake</li><li><strong>Next step:</strong> Notify Sam when replacement arrives; if delayed past <strong>Sep 22</strong>, offer refund to original card or store credit for full <strong>$59.95</strong>.</li></ul>
+<h3>CO-1056 — Price-match request</h3>
+<ul><li><strong>Date opened:</strong> September 14, 2026</li><li><strong>Customer:</strong> Alicia M.</li><li><strong>Channel:</strong> Email</li><li><strong>Order / SKU:</strong> In-store purchase Sep 14 · Receipt <strong>#R-55602</strong> · SKU <strong>CHAIR-YETI-TRAIL</strong> · Yeti Trailhead Camp Chair · Paid <strong>$300.00</strong></li><li><strong>Issue:</strong> Customer found same model at a local competitor listed at <strong>$279.99</strong> same day; wants <strong>$20.01</strong> price-match refund. Attached competitor screenshot (timestamp Sep 14).</li><li><strong>Status:</strong> <strong>Open</strong></li><li><strong>Owner:</strong> Jordan Blake</li><li><strong>Next step:</strong> Per policy, same-day local price match is allowed on identical in-stock items. Verify screenshot with manager; if valid, process <strong>$20.01</strong> refund to original card. Confirm with human before drafting “approved” language.</li></ul>
+<h3>CO-1059 — Return without receipt</h3>
+<ul><li><strong>Date opened:</strong> September 15, 2026</li><li><strong>Customer:</strong> Chris P.</li><li><strong>Channel:</strong> Phone</li><li><strong>Order / SKU:</strong> Claims purchased a <strong>Patagonia Better Sweater</strong> (~$139) about <strong>10 days ago</strong> in cash; no receipt. Wants card refund. Item unused with tags (customer still has it at home).</li><li><strong>Status:</strong> <strong>Open</strong></li><li><strong>Owner:</strong> Jordan Blake</li><li><strong>Next step:</strong> Within <strong>14-day no-receipt</strong> window → <strong>store credit only</strong> if we can verify purchase via register lookup (name/phone/approx date). <strong>Cannot</strong> refund to a card without payment record. Ask Chris to bring the sweater and ID; attempt lookup.</li></ul>
+<h2>Owner legend</h2>
+<ul><li><strong>Jordan Blake</strong> — Front-desk lead (first response, drafts, lookups)</li><li><strong>Maya Ortega</strong> — Owner / manager (escalations, service recovery, staff coaching)</li></ul>
+<p><em>Fictional complaint log for San Angelo Copilot Agent Builder training. Not real customer data.</em></p>
+      </div>
+    </article>
+
+    <footer class="page">
+      <strong>Knowledge for Copilot Agent Builder</strong> · culturaminds.com/workshop<br />
+      CulturaMinds · San Angelo workshop · CVTA + ASU SBDC · Fictional training data<br />
+      URLs kept to two path levels (Copilot Agent Builder requirement).
+    </footer>
+  </main>
+</body>
+</html>
