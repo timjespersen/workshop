@@ -11,7 +11,10 @@ CRITICAL — Copilot Agent Builder path limit:
   do NOT end in .html. Per-file pages are flat siblings (not nested under role).
 
 Use when Copilot Knowledge will not accept file uploads.
-Prefer zip upload (Option A) first; fall back to these website URLs.
+Prefer zip upload (Option A) first; fall back to these website URLs (Option B).
+Option C (paste-only, knowledge inside Instructions): download Agent-Setup docs from
+  https://www.culturaminds.com/workshop/  (agent-setup-all.zip)
+  or use https://timjespersen.github.io/workshop/setup-listing-qa/ (etc.).
 
 For each role, paste the COMBINED URL into Knowledge,
 or paste any individual folder URL.
