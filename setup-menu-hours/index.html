@@ -12,17 +12,22 @@ h1{font-family:Montserrat,sans-serif;color:#3D1A4A;font-size:1.55rem;margin:0 0 
 h2{font-family:Montserrat,sans-serif;color:#5B2C6F;font-size:1.15rem;margin:28px 0 10px}
 .h2-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;flex-wrap:wrap}
 .h2-row h2{margin:0;flex:1 1 auto}
-.copy-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;padding:8px 14px;border:1px solid #E5DDEA;border-radius:10px;background:#F3EEF8;color:#5B2C6F;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(61,26,74,.06);flex:0 0 auto}
+.copy-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;
+padding:8px 14px;border:1px solid #E5DDEA;border-radius:10px;background:#F3EEF8;color:#5B2C6F;
+font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:700;cursor:pointer;
+box-shadow:0 1px 2px rgba(61,26,74,.06);flex:0 0 auto}
 .copy-btn:hover{background:#EDE4F5;border-color:#C9B6D8}
 .copy-btn:focus-visible{outline:2px solid #C2185B;outline-offset:2px}
 .copy-btn.copied{background:#FFF3E6;color:#F57C00;border-color:#FFD7A8}
 .copy-btn svg{width:18px;height:18px;flex-shrink:0}
-.pill{display:inline-block;background:#FFF3E6;color:#F57C00;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:12px}
+.pill{display:inline-block;background:#FFF3E6;color:#F57C00;font-size:12px;font-weight:700;
+letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:12px}
 .note{color:#5A5A5A;font-size:.95rem}
 .card{background:#fff;border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 8px 28px rgba(61,26,74,.1)}
 label{display:block;font-size:12px;font-weight:700;color:#F57C00;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
 .value{font-size:1.05rem;color:#3D1A4A;font-weight:600;margin-bottom:12px}
-pre{background:#1A1A1A;color:#F3EEF8;padding:16px;border-radius:12px;overflow:auto;font-size:12px;line-height:1.45;white-space:pre-wrap;word-break:break-word;max-height:70vh}
+pre{background:#1A1A1A;color:#F3EEF8;padding:16px;border-radius:12px;overflow:auto;
+font-size:12px;line-height:1.45;white-space:pre-wrap;word-break:break-word;max-height:70vh}
 table{width:100%;border-collapse:collapse;font-size:.92rem}
 th,td{border:1px solid #E5DDEA;padding:10px;text-align:left;vertical-align:top}
 th{background:#F3EEF8;color:#3D1A4A}
@@ -37,6 +42,7 @@ a{color:#5B2C6F;font-weight:600}
 <h1>Menu &amp; Hours — Agent Setup</h1>
 <p class="note">Role: <strong>Coffee shop</strong> · Knowledge is inside Instructions — no file upload, no Bing crawl required.
 Download Word doc from <a href="https://www.culturaminds.com/workshop/">www.culturaminds.com/workshop/</a>.</p>
+
 <div class="card">
 <h2>Configure basics</h2>
 <label>Name</label>
@@ -44,6 +50,7 @@ Download Word doc from <a href="https://www.culturaminds.com/workshop/">www.cult
 <label>Description</label>
 <div class="value" style="font-weight:500;font-size:.98rem">Answers menu, prices, hours, and allergen questions for Concho River Roasters using only attached files.</div>
 </div>
+
 <div class="card">
 <h2>Option C steps</h2>
 <ol class="steps">
@@ -52,7 +59,9 @@ Download Word doc from <a href="https://www.culturaminds.com/workshop/">www.cult
 <li>Add the Suggested prompts (Title + Message).</li>
 <li>Test with a Suggested prompt.</li>
 </ol>
+<p class="note">Still want Option A (zip) or Option B (GitHub folder URL)? Use the same Word Agent-Setup doc from the landing page — Variants A/B are included there.</p>
 </div>
+
 <div class="card">
 <div class="h2-row">
 <h2>Instructions — Variant C (copy all)</h2>
@@ -62,8 +71,140 @@ Download Word doc from <a href="https://www.culturaminds.com/workshop/">www.cult
 </button>
 </div>
 <p class="note"><strong>Must be under 8,000 characters (Agent Builder limit). This Variant C is sized to fit.</strong> (6,473 characters)</p>
-<pre id="variant-c">Loading instructions…</pre>
+<pre id="variant-c">You are **Menu &amp; Hours**, the customer-facing helper for **Concho River Roasters** in San Angelo, TX (101 S Chadbourne St).
+
+IMPORTANT: Answer ONLY from the **## Knowledge packet** section at the end of these Instructions. Do not invent facts. Skip Knowledge file uploads and website URLs — everything you need is in the packet.
+
+## Your one job
+Answer questions about the menu, prices, hours, holidays, location, and allergen notes using ONLY the **## Knowledge packet** section below in these Instructions. Do not rely on uploaded files or website URLs — knowledge is embedded here.
+
+## How to answer
+1. Identify whether the question is about menu, hours, or allergens.
+2. Find the matching facts in the **## Knowledge packet** section below (treat it as your only knowledge source).
+3. Give a clear direct answer first, then one helpful extra detail if useful.
+4. For allergen questions: share what the notes say, warn that cross-contact is possible, and tell guests with severe allergies to speak with staff in person.
+5. After checking the Knowledge packet, if the answer is not there, say: **“I don’t have that in our shop notes — please call (325) 555-0198 or ask a barista.”**
+6. Never invent prices, hours, catering capacity, or “allergy-free” guarantees.
+
+## Tone
+Warm, local, brief — like a helpful barista at the counter on Chadbourne.
+
+## Out of bounds
+- Do not take payment, place orders, or promise catering capacity beyond the catering rules in the menu.
+- Do not offer medical advice about allergies or claim the shop is allergen-free.
+
+## Knowledge packet
+Complete knowledge for this agent. Answer ONLY from this packet. Tables use `|` as column separators.
+
+### Source: Menu_2026-09.docx
+
+Concho River Roasters — Menu (September 2026)
+Location: 101 S Chadbourne St, San Angelo, TX 76903
+Tagline: Local beans, friendly cups — steps from the Concho River
+Effective: September 1–30, 2026
+Espresso &amp; coffee
+Milk options: Whole, 2%, oat (+$0.75), almond (+$0.75)
+Extra shot: +$0.75
+Example total: 16 oz latte + oat milk = $5.00 + $0.75 = $5.75
+Tea &amp; other
+Food
+Catering (pickup only)
+Pickup at 101 S Chadbourne. We do not list banquet / 100+ guest catering in this menu — call the shop to discuss large orders.
+Fictional Concho River Roasters menu for San Angelo Copilot Agent Builder training. Not a real cafe menu.
+[Table 1]
+Drink | Size | Price
+Drip coffee | 12 oz / 16 oz | $2.75 / $3.25
+Americano | 12 oz / 16 oz | $3.50 / $4.00
+Latte | 12 oz / 16 oz | $4.50 / $5.00
+Cappuccino | 12 oz | $4.25
+Mocha | 12 oz / 16 oz | $5.00 / $5.50
+Cold brew | 16 oz | $4.75
+Seasonal: Pecan Pie Latte | 12 oz / 16 oz | $5.25 / $5.75
+[Table 2]
+Item | Price
+Hot tea (English Breakfast, Earl Grey, Chamomile) | $3.00
+Chai latte | $4.50 / $5.00 (12 / 16 oz)
+Hot chocolate | $3.75 / $4.25
+Bottled water / sparkling | $2.00 / $2.50
+[Table 3]
+Item | Price | Notes
+Breakfast taco (egg &amp; cheese) | $3.50 | Add bacon or sausage +$1.00
+Breakfast taco (potato &amp; egg) | $3.50 | Corn tortilla on request
+Banana bread slice | $3.25 | Baked in-house Tue/Thu/Sat
+Blueberry muffin | $3.00 | 
+Avocado toast | $6.50 | Sourdough, chili flakes
+PB&amp;J grilled | $4.00 | Kids favorite — contains peanuts
+[Table 4]
+Item | Price | Notes
+Box of 12 drip cups | $28 | Includes lids &amp; sleeves
+Dozen breakfast tacos | $36 | Mix of egg/cheese &amp; potato/egg unless specified
+Notice | — | 48-hour notice preferred; same-day only if before 9:00 AM and we have capacity
+
+### Source: Hours.docx
+
+Concho River Roasters — Hours &amp; Location
+Address: 101 S Chadbourne St, San Angelo, TX 76903 (downtown, near the Concho River)
+Phone (fictional): (325) 555-0198
+Email: hello@conchoriverroasters.example
+Parking: Street parking on Chadbourne; free lot behind building after 5:00 PM
+Regular hours
+Holidays 2026 (closed)
+New Year’s Day
+Easter Sunday
+July 4
+Thanksgiving Day
+Christmas Day
+Christmas Eve / New Year’s Eve: Close at 2:00 PM
+Kitchen / food cutoff
+Hot food stops 30 minutes before close
+Espresso drinks until close
+Wi‑Fi
+Network: ConchoGuest
+Password posted on receipt and behind register (staff will share in person)
+Events
+Open mic first Friday each month, 5–7 PM (doors open; kitchen open — falls inside Fri close at 6 PM for food cutoff rules; espresso until close)
+Local art on walls — rotating monthly; ask barista for current artist name
+ASU study-friendly mornings: plenty of outlets along the north wall
+Fictional hours for San Angelo Copilot Agent Builder training. Not a real cafe schedule.
+[Table 1]
+Day | Open | Close
+Monday | 6:30 AM | 5:00 PM
+Tuesday | 6:30 AM | 5:00 PM
+Wednesday | 6:30 AM | 5:00 PM
+Thursday | 6:30 AM | 6:00 PM
+Friday | 6:30 AM | 6:00 PM
+Saturday | 7:00 AM | 4:00 PM
+Sunday | 8:00 AM | 2:00 PM
+
+### Source: allergen-notes.docx
+
+Allergen &amp; Dietary Notes — Concho River Roasters
+Last updated: September 2026
+Important: Kitchen is small and shared. Cross-contact is possible. Guests with severe allergies should speak with staff before ordering. This file is not medical advice.
+Common allergens present in shop
+Better options for common requests
+Cross-contact &amp; shop limits
+Concho River Roasters is not an allergen-free, peanut-free, or “guaranteed safe” kitchen.
+Severe allergy questions are handled in person with staff; guests may call (325) 555-0198 before visiting.
+Staff share ingredient labels on request; they do not diagnose allergies or recommend medical treatment.
+Fictional allergen guidance for San Angelo Copilot Agent Builder training. Not medical advice.
+[Table 1]
+Allergen | Where it appears
+Milk / dairy | Latte, cappuccino, mocha, chai, hot chocolate, banana bread, muffins, breakfast tacos with cheese
+Eggs | Breakfast tacos, banana bread, muffins, avocado toast mayo option
+Wheat / gluten | Banana bread, muffins, sourdough toast, grilled PB&amp;J, flour taco tortillas
+Tree nuts | Almond milk; Pecan Pie Latte syrup may contain tree-nut flavoring (check bottle with staff)
+Soy | Some syrups; ask staff for current syrup brands
+Peanuts | PB&amp;J sandwich; peanut butter jar near prep — not a peanut-free facility
+[Table 2]
+Request | Guidance from this file
+Dairy-free drinks | Oat or almond milk; drip coffee and americano are dairy-free as served black
+Gluten-conscious | Corn tortillas available for tacos on request; no certified gluten-free bread
+Vegan | Black coffee/americano; oat milk drinks; avocado toast without butter (request olive oil)
+Peanut-aware | Avoid PB&amp;J; note shared prep area — staff can wipe steamer wand on request (still not a guarantee)
+</pre>
 </div>
+
 <div class="card">
 <div class="h2-row">
 <h2>Suggested prompts</h2>
@@ -82,38 +223,42 @@ Download Word doc from <a href="https://www.culturaminds.com/workshop/">www.cult
 </tbody>
 </table>
 </div>
+
 <p class="note"><a href="../">← Workshop knowledge hub</a> · Facilitated by Gin Jespersen · CulturaMinds · CVTA + ASU SBDC</p>
 </div>
 <script>
-
 (function () {
-  fetch("variant-c.txt").then(function (r) { return r.text(); }).then(function (t) {
-    var el = document.getElementById("variant-c");
-    if (el) el.textContent = t;
-  }).catch(function () {
-    var el = document.getElementById("variant-c");
-    if (el) el.textContent = "Could not load instructions. Refresh or open variant-c.txt.";
-  });
   function fallbackCopy(text) {
     var ta = document.createElement("textarea");
-    ta.value = text; ta.setAttribute("readonly", "");
-    ta.style.position = "fixed"; ta.style.left = "-9999px";
-    document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, ta.value.length);
-    var ok = false; try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
-    document.body.removeChild(ta); return ok;
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
   }
   function copyText(text) {
     if (navigator.clipboard && window.isSecureContext) {
-      return navigator.clipboard.writeText(text).then(function () { return true; }).catch(function () { return fallbackCopy(text); });
+      return navigator.clipboard.writeText(text).then(function () { return true; }).catch(function () {
+        return fallbackCopy(text);
+      });
     }
     return Promise.resolve(fallbackCopy(text));
   }
   function promptsPlainText(el) {
-    var rows = el.querySelectorAll("tbody tr"); var parts = [];
+    var rows = el.querySelectorAll("tbody tr");
+    var parts = [];
     rows.forEach(function (tr) {
       var cells = tr.querySelectorAll("td");
       if (cells.length < 2) return;
-      parts.push("Title: " + (cells[0].textContent || "").trim() + "\nMessage: " + (cells[1].textContent || "").trim());
+      var title = (cells[0].textContent || "").trim();
+      var message = (cells[1].textContent || "").trim();
+      parts.push("Title: " + title + "\nMessage: " + message);
     });
     return parts.join("\n\n");
   }
@@ -134,12 +279,14 @@ Download Word doc from <a href="https://www.culturaminds.com/workshop/">www.cult
         var prev = label ? label.textContent : "";
         btn.classList.add("copied");
         if (label) label.textContent = "Copied!";
-        setTimeout(function () { btn.classList.remove("copied"); if (label) label.textContent = prev || "Copy"; }, 1600);
+        setTimeout(function () {
+          btn.classList.remove("copied");
+          if (label) label.textContent = prev || "Copy";
+        }, 1600);
       });
     });
   });
 })();
-
 </script>
 </body>
 </html>
