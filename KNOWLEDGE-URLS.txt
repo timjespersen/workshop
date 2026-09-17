@@ -1,68 +1,70 @@
 CulturaMinds Copilot Agent Builder — Knowledge website URLs (Option B)
 ========================================================================
 
-Public base: https://culturaminds.com/workshop/
+Public base (Option B paste): https://timjespersen.github.io/workshop/
 Generated: 2026-09-17
 
 CRITICAL — Copilot Agent Builder path limit:
   Public website knowledge URLs only support paths up to TWO levels deep
-  (domain + /workshop/ + filename.html). Deeper nested paths are invalid.
-  All knowledge HTML therefore lives flat next to index.html.
+  (domain + /workshop/ + folder/). Deeper nested paths are invalid.
+  Knowledge pages use folder-style URLs (FolderName/index.html) so they
+  do NOT end in .html. Per-file pages are flat siblings (not nested under role).
 
 Use when Copilot Knowledge will not accept file uploads.
 Prefer zip upload (Option A) first; fall back to these website URLs.
 
 For each role, paste the COMBINED URL into Knowledge,
-or paste any individual .html file URL.
+or paste any individual folder URL.
 
 --- Realtor (Listing Q&A) ---
   Realtor (combined)
-    https://timjespersen.github.io/workshop/realtor.html
+    https://timjespersen.github.io/workshop/realtor/
   MLS-summary.docx
-    https://timjespersen.github.io/workshop/realtor-MLS-summary.html
+    https://timjespersen.github.io/workshop/realtor-MLS-summary/
   disclosure-notes.docx
-    https://timjespersen.github.io/workshop/realtor-disclosure-notes.html
+    https://timjespersen.github.io/workshop/realtor-disclosure-notes/
   hoa-fees.docx
-    https://timjespersen.github.io/workshop/realtor-hoa-fees.html
+    https://timjespersen.github.io/workshop/realtor-hoa-fees/
 
 --- Coffee shop (Menu & Hours) ---
   Coffee shop (combined)
-    https://timjespersen.github.io/workshop/coffee-shop.html
+    https://timjespersen.github.io/workshop/coffee-shop/
   Menu_2026-09.docx
-    https://timjespersen.github.io/workshop/coffee-shop-Menu_2026-09.html
+    https://timjespersen.github.io/workshop/coffee-shop-Menu_2026-09/
   Hours.docx
-    https://timjespersen.github.io/workshop/coffee-shop-Hours.html
+    https://timjespersen.github.io/workshop/coffee-shop-Hours/
   allergen-notes.docx
-    https://timjespersen.github.io/workshop/coffee-shop-allergen-notes.html
+    https://timjespersen.github.io/workshop/coffee-shop-allergen-notes/
 
 --- Bookkeeper (Client Books Helper) ---
   Bookkeeper (combined)
-    https://timjespersen.github.io/workshop/bookkeeper.html
+    https://timjespersen.github.io/workshop/bookkeeper/
   August-PnL.docx
-    https://timjespersen.github.io/workshop/bookkeeper-August-PnL.html
+    https://timjespersen.github.io/workshop/bookkeeper-August-PnL/
   ClientX-engagement-letter.docx
-    https://timjespersen.github.io/workshop/bookkeeper-ClientX-engagement-letter.html
+    https://timjespersen.github.io/workshop/bookkeeper-ClientX-engagement-letter/
   ClientX-invoices.xlsx
-    https://timjespersen.github.io/workshop/bookkeeper-ClientX-invoices.html
+    https://timjespersen.github.io/workshop/bookkeeper-ClientX-invoices/
 
 --- Complaints (Complaints Helper) ---
   Complaints (combined)
-    https://timjespersen.github.io/workshop/complaints.html
+    https://timjespersen.github.io/workshop/complaints/
   open-complaints-log.docx
-    https://timjespersen.github.io/workshop/complaints-open-complaints-log.html
+    https://timjespersen.github.io/workshop/complaints-open-complaints-log/
   response-playbook.docx
-    https://timjespersen.github.io/workshop/complaints-response-playbook.html
+    https://timjespersen.github.io/workshop/complaints-response-playbook/
   return-refund-policy.docx
-    https://timjespersen.github.io/workshop/complaints-return-refund-policy.html
+    https://timjespersen.github.io/workshop/complaints-return-refund-policy/
   sample-inbox-notes.docx
-    https://timjespersen.github.io/workshop/complaints-sample-inbox-notes.html
+    https://timjespersen.github.io/workshop/complaints-sample-inbox-notes/
 
 Facilitator tip:
-  Deploy these flat *.html files under /workshop/ on culturaminds.com
-  (same host as the download landing at /workshop/index.html).
+  Option B paste URLs are on GitHub Pages (timjespersen.github.io/workshop/).
+  Zip download landing to advertise: https://www.culturaminds.com/workshop/
   Do NOT nest under /workshop/knowledge/<role>/ — that exceeds the
   Copilot 2-level path limit.
+  Maintained in: /workspace/copilot-workshop/github-pages-workshop
 
-Regenerate:
+Regenerate (local web-workshop build; sync to github-pages-workshop for GH):
   /workspace/copilot-workshop/.venv/bin/python \
-    web-workshop/build_knowledge_html.py
+    training-2hr/v3-aaa/web-workshop/build_knowledge_html.py
