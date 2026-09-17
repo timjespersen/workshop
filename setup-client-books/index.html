@@ -20,6 +20,12 @@ box-shadow:0 1px 2px rgba(61,26,74,.06);flex:0 0 auto}
 .copy-btn:focus-visible{outline:2px solid #C2185B;outline-offset:2px}
 .copy-btn.copied{background:#FFF3E6;color:#F57C00;border-color:#FFD7A8}
 .copy-btn svg{width:18px;height:18px;flex-shrink:0}
+.copy-btn-cell{min-width:44px;min-height:44px;padding:6px 10px;font-size:12px;border-radius:8px;
+background:#fff;color:#5B2C6F;border-color:#E5DDEA}
+.copy-btn-cell svg{width:16px;height:16px}
+.cell-copy{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.cell-copy .copy-plain{flex:1 1 auto;min-width:0}
+td:first-child .copy-plain{font-weight:700;color:#3D1A4A}
 .pill{display:inline-block;background:#FFF3E6;color:#F57C00;font-size:12px;font-weight:700;
 letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:12px}
 .note{color:#5A5A5A;font-size:.95rem}
@@ -34,6 +40,10 @@ th{background:#F3EEF8;color:#3D1A4A}
 a{color:#5B2C6F;font-weight:600}
 .steps{margin:0;padding-left:1.2rem}
 .steps li{margin:6px 0}
+@media (max-width:560px){
+  .cell-copy{flex-direction:column;align-items:stretch;gap:6px}
+  .copy-btn-cell{align-self:flex-start}
+}
 </style>
 </head>
 <body>
@@ -55,8 +65,8 @@ Download Word doc from <a href="https://www.culturaminds.com/workshop/">www.cult
 <h2>Option C steps</h2>
 <ol class="steps">
 <li>Skip Knowledge uploads and website URLs.</li>
-<li>Copy <strong>Variant C Instructions</strong> below into Configure → Instructions.</li>
-<li>Add the Suggested prompts (Title + Message).</li>
+<li>Copy <strong>Variant C Instructions</strong> below into Configure → Instructions (one Copy-all).</li>
+<li>Add Suggested prompts: use the <strong>Copy</strong> button on each Title and each Message (enter one row at a time).</li>
 <li>Test with a Suggested prompt.</li>
 </ol>
 <p class="note">Still want Option A (zip) or Option B (GitHub folder URL)? Use the same Word Agent-Setup doc from the landing page — Variants A/B are included there.</p>
@@ -193,20 +203,15 @@ INV-1046 | Lone Star Fence Co | 2026-09-01 | 2026-09-15 | 1250.00 | Open | Septe
 </div>
 
 <div class="card">
-<div class="h2-row">
 <h2>Suggested prompts</h2>
-<button type="button" class="copy-btn" data-copy-target="suggested-prompts" aria-label="Copy suggested prompts">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-<span class="copy-label">Copy</span>
-</button>
-</div>
+<p class="note" style="margin-top:0">In Agent Builder → Suggested prompts, enter <strong>Title</strong> and <strong>Message</strong> for each row. Use the cell <strong>Copy</strong> buttons — one field at a time (do not paste the whole table).</p>
 <table id="suggested-prompts">
 <thead><tr><th>Title</th><th>Message</th></tr></thead>
 <tbody>
-<tr><td><strong>Open invoices</strong></td><td>Which invoices for Lone Star Fence Co are still Open?</td></tr>
-<tr><td><strong>Retainer scope</strong></td><td>What is included in the monthly bookkeeping retainer?</td></tr>
-<tr><td><strong>August P&amp;L</strong></td><td>What was August total income and gross profit?</td></tr>
-<tr><td><strong>Out of scope</strong></td><td>What is out of scope in the engagement letter?</td></tr>
+<tr><td><div class="cell-copy"><span class="copy-plain">Open invoices</span><button type="button" class="copy-btn copy-btn-cell" data-copy-nearest=".copy-plain" aria-label="Copy title 1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button></div></td><td><div class="cell-copy"><span class="copy-plain">Which invoices for Lone Star Fence Co are still Open?</span><button type="button" class="copy-btn copy-btn-cell" data-copy-nearest=".copy-plain" aria-label="Copy message 1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button></div></td></tr>
+<tr><td><div class="cell-copy"><span class="copy-plain">Retainer scope</span><button type="button" class="copy-btn copy-btn-cell" data-copy-nearest=".copy-plain" aria-label="Copy title 2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button></div></td><td><div class="cell-copy"><span class="copy-plain">What is included in the monthly bookkeeping retainer?</span><button type="button" class="copy-btn copy-btn-cell" data-copy-nearest=".copy-plain" aria-label="Copy message 2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button></div></td></tr>
+<tr><td><div class="cell-copy"><span class="copy-plain">August P&amp;L</span><button type="button" class="copy-btn copy-btn-cell" data-copy-nearest=".copy-plain" aria-label="Copy title 3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button></div></td><td><div class="cell-copy"><span class="copy-plain">What was August total income and gross profit?</span><button type="button" class="copy-btn copy-btn-cell" data-copy-nearest=".copy-plain" aria-label="Copy message 3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button></div></td></tr>
+<tr><td><div class="cell-copy"><span class="copy-plain">Out of scope</span><button type="button" class="copy-btn copy-btn-cell" data-copy-nearest=".copy-plain" aria-label="Copy title 4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button></div></td><td><div class="cell-copy"><span class="copy-plain">What is out of scope in the engagement letter?</span><button type="button" class="copy-btn copy-btn-cell" data-copy-nearest=".copy-plain" aria-label="Copy message 4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button></div></td></tr>
 </tbody>
 </table>
 </div>
@@ -237,29 +242,22 @@ INV-1046 | Lone Star Fence Co | 2026-09-01 | 2026-09-15 | 1250.00 | Open | Septe
     }
     return Promise.resolve(fallbackCopy(text));
   }
-  function promptsPlainText(el) {
-    var rows = el.querySelectorAll("tbody tr");
-    var parts = [];
-    rows.forEach(function (tr) {
-      var cells = tr.querySelectorAll("td");
-      if (cells.length < 2) return;
-      var title = (cells[0].textContent || "").trim();
-      var message = (cells[1].textContent || "").trim();
-      parts.push("Title: " + title + "\nMessage: " + message);
-    });
-    return parts.join("\n\n");
-  }
-  function getCopyText(targetId) {
+  function getCopyText(btn) {
+    var nearest = btn.getAttribute("data-copy-nearest");
+    if (nearest) {
+      var root = btn.closest(".cell-copy") || btn.parentElement;
+      var src = root ? root.querySelector(nearest) : null;
+      return src ? (src.textContent || "").trim() : "";
+    }
+    var targetId = btn.getAttribute("data-copy-target");
+    if (!targetId) return "";
     var el = document.getElementById(targetId);
     if (!el) return "";
-    if (targetId === "variant-c") return el.textContent || "";
-    if (targetId === "suggested-prompts") return promptsPlainText(el);
     return el.textContent || "";
   }
   document.querySelectorAll(".copy-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var targetId = btn.getAttribute("data-copy-target");
-      var text = getCopyText(targetId);
+      var text = getCopyText(btn);
       var label = btn.querySelector(".copy-label");
       copyText(text).then(function (ok) {
         if (!ok) return;
